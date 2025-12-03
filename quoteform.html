@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RainHarvest Quote Form Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* BASE STYLES for font */
+        body {
+            font-family: "Poppins", system-ui, sans-serif;
+            background-color: #f8f9fa; /* Optional: A light background for the form file itself */  
+            margin: 0;
+            padding: o;
+            background: linear-gradient(135deg, rgba(6, 36, 86, 0.95), rgba(0, 77, 64, 0.95));
+            
+
+
+        }
+
+        /* ================================================= */
+        /* 📝 QUOTE FORM SECTION CSS */
+        /* ================================================= */
+
+        .quote-form-section {
+            padding: 120px 20px;
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            /* Lighter background for the inner form card */
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2); 
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 4px solid #007fbf;
+        }
+
+        .quote-form-section h2 {
+            color: #004d40;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .quote-form-section p.form-description {
+            color: #004d40;
+            margin-bottom: 30px;
+        }
+
+        #requestQuoteForm {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #004d40; /* Use your primary color for labels */
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #007fbf;
+            outline: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            /* Button gradient from your theme */
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+         /* Footer styling RWH theme */
+        .rwh-footer {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #f1f1f1;
+            padding-top: 50px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            /* border-top: 5px solid #062456; */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            width: 30%;
+            margin: 10px 0;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0f7fa;
+            padding-bottom: 8px;
+        }
+
+        .footer-col.links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-col.links ul li a:hover {
+            color: #004d40;
+            padding-left: 5px;
+        }
+
+        /* Social Icons Styling */
+        .social-icons a {
+            color: #f1f1f1;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: #f1f1f1;
+        }
+
+        .contact-info p i:hover {
+            color: #004d40;
+        }
+
+
+        /* Footer Bottom Bar */
+        .footer-bottom-bar {
+            background: linear-gradient(135deg, #062456, #004d40);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85em;
+            color: white;
+            border-top: 2px solid #062456
+        }
+         /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            height: 35px;
+            width: 130px;
+            box-sizing: border-box;
+
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border: 1px solid #007fbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .search-button {
+            background-color: #007fbf;
+            color: white;
+        }
+
+        .login-button,
+        .signup-button {
+            background-color: #007fbf;
+            color: white;
+            border: 1px solid #007fbf;
+        }
+         /* Transition for smooth hover effect on all interactive buttons */
+        .search-button,
+        .login-button,
+        .signup-button,
+        .cta-button,
+        .alert-link-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for Search, Login, and Sign Up buttons */
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #007fbf;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">💧 Rain Harvest</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="review.html"> Review </a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+
+            <div class="action-buttons-group">
+                <div class="search-section">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+                <div class="mx-2">
+                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="quote-form" class="quote-form-section">
+        <div class="form-container">
+            <h2>Request a Custom Quote 🌧️</h2>
+            <p class="form-description">Tell us about your property and your rainwater harvesting needs.</p>
+
+            <form id="requestQuoteForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone-alt"></i> Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service"><i class="fas fa-tools"></i> Interested Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a Solution --</option>
+                        <option value="Rooftop">Rooftop Catchment System</option>
+                        <option value="Borewell">Borewell & Pit Recharge</option>
+                        <option value="Filtration">Advanced Filtration & Storage</option>
+                        <option value="Consultation">General Consultation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-home"></i> Property Details & Message (e.g., Roof Area,
+                        Location)</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Quote Request</button>
+
+                <p id="successMessage"
+                    style="display: none; color: #004d40; background-color: #e6f7f2; padding: 10px; border-radius: 5px; margin-top: 15px; font-weight: bold;">
+                    <i class="fas fa-check-circle"></i> Thank you! Your quote request has been sent successfully. We will
+                    contact you shortly.
+                </p>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="rwh-footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h3> 💧 RainHarvest Vision</h3>
+                <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+                </p>
+                <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+            </div>
+
+            <div class="footer-col links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="review.html"><i class="fas fa-star"></i> Review </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col social">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // NEW: Quote Form Submission Logic
+        const quoteForm = document.getElementById('requestQuoteForm');
+        const formSuccessMsg = document.getElementById('successMessage');
+
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // 1. Disable the submit button and show "Sending..."
+                const submitBtn = quoteForm.querySelector('.submit-button');
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                // 2. Simulate a delay for server processing (1.5 seconds)
+                setTimeout(() => {
+                    // 3. Display success message
+                    formSuccessMsg.style.display = "block";
+
+                    // 4. Reset the form fields
+                    quoteForm.reset();
+
+                    // 5. Reset the button
+                    submitBtn.textContent = 'Send Quote Request';
+                    submitBtn.disabled = false;
+
+                    // 6. Hide success message after 6 seconds
+                    setTimeout(() => {
+                        formSuccessMsg.style.display = "none";
+                    }, 6000);
+
+                }, 1500);
+            });
+        }
+        // --- END: Quote Form Submission Logic ---
+    </script>
+</body>
+</html>

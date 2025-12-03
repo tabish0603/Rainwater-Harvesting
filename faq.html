@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(135deg,#062456,#004d40);
+  }
+  /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            height: 35px;
+            width: 130px;
+            box-sizing: border-box;
+
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border: 1px solid #007fbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .search-button {
+            background-color: #007fbf;
+            color: white;
+        }
+
+        .login-button,
+        .signup-button {
+            background-color: #007fbf;
+            color: white;
+            border: 1px solid #007fbf;
+        }
+         /* Transition for smooth hover effect on all interactive buttons */
+        .search-button,
+        .login-button,
+        .signup-button,
+        .cta-button,
+        .alert-link-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for Search, Login, and Sign Up buttons */
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #007fbf;
+        }
+
+</style>
+  </head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">💧 Rain Harvest</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="review.html"> Review </a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+
+            <div class="action-buttons-group">
+                <div class="search-section">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+                <div class="mx-2">
+                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+<section id="faq" style="padding:80px 20px;background:linear-gradient(135deg,#062456,#004d40);font-family:'Poppins',sans-serif;">
+  <div style="max-width:900px;margin:auto;">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:60px;">
+      <h2 style=" background: #004d40;color: white;border-radius: 10px; font-weight:700;font-size:44px;margin-bottom:12px;letter-spacing:0.5px;">
+        Rainwater Harvesting FAQs
+      </h2>
+      <p style="color:linear-gradient(135deg,#062456,#004d40); background: #004d40; border-radius: 10px; font-size:1.05rem;max-width:650px;margin:auto;line-height:1.6; color: white;">
+        💧 Learn how rainwater harvesting helps you save water, money, and the planet — one drop at a time.
+      </p>
+    </div>
+
+    <!-- Search -->
+    <div style="text-align:center;margin-bottom:35px;">
+      <input id="faqSearch" type="text" placeholder="🔍 Search for a question..."
+        style="width:100%;max-width:500px;padding:14px 18px;border:3px solid #007fbf ;
+        border-radius:10px;font-size:16px;outline:none;transition:0.3s;
+        box-shadow:0 2px 10px rgba(0,150,136,0.1);">
+    </div>
+
+    <!-- FAQs -->
+    <div id="faqContainer">
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">What is Rainwater Harvesting?</div>
+        <div class="faq-answer">
+          It means collecting and storing rainwater from roofs or surfaces for reuse — like watering plants, cleaning, or even filtered drinking.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">How does rooftop rainwater harvesting work?</div>
+        <div class="faq-answer">
+          Rainwater is directed from rooftops through pipes and filters into tanks for later use. Simple, smart, and eco-friendly!
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">Does it save money?</div>
+        <div class="faq-answer">
+          Yes — it can cut water bills by 30–40% and reduce pumping and supply costs too.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">What are the environmental benefits?</div>
+        <div class="faq-answer">
+          It reduces soil erosion, helps groundwater recharge, and prevents city flooding.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">How much maintenance is needed?</div>
+        <div class="faq-answer">
+          Very little — clean filters twice a year and check pipes for debris. That’s it!
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">Does it work in dry seasons?</div>
+        <div class="faq-answer">
+          Yes — the stored water can be used throughout dry months, even from light rains.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">What technologies are used?</div>
+        <div class="faq-answer">
+          Smart sensors, UV filters, IoT-based tanks, and auto-overflow systems make it efficient and modern.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">How much water can I save?</div>
+        <div class="faq-answer">
+          A 100 m² roof can collect nearly 80,000 liters yearly — enough for months of home use.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">How does it help farmers?</div>
+        <div class="faq-answer">
+          It provides water for crops, boosts yields, and reduces overuse of borewells.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">Can schools and offices install it?</div>
+        <div class="faq-answer">
+          Yes — they save water and promote sustainability among staff and students.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">Is it useful in cities?</div>
+        <div class="faq-answer">
+          Absolutely! It helps manage runoff, recharge aquifers, and reduce urban floods.
+        </div>
+      </div>
+
+      <div class="faq-item" style="border: 2px solid white;">
+        <div class="faq-question">How can I start at home?</div>
+        <div class="faq-answer">
+          Begin with a simple system — filter + pipe + tank — or get help from local experts.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .faq-item {
+      background:linear-gradient(135deg,#062456,#004d40);
+      
+      border-left:5px solid #062456;
+      border: 1px solid #004d40;
+      border-radius:10px;
+      margin-bottom:15px;
+      box-shadow:0 3px 12px rgba(0,0,0,0.05);
+      transition:all 0.3s ease;
+    }
+    .faq-item:hover {
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(0,150,136,0.15);
+    }
+
+    .faq-question {
+      padding:16px 20px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:1.05rem;
+      color:white;
+      position:relative;
+      transition:color 0.3s;
+    }
+    .faq-question:hover { color:#00796b; }
+    .faq-question::after {
+      content:"+";
+      position:absolute;
+      right:20px;
+      top:15px;
+      font-size:24px;
+      color:white;
+      transition:transform 0.3s ease,color 0.3s;
+    }
+    .faq-item.active .faq-question::after {
+      transform:rotate(45deg);
+      color:#004d40;
+    }
+
+    .faq-answer {
+      max-height:0;
+      overflow:hidden;
+      background:#f9fefc;
+      color:#1b5e20;
+      padding:0 20px;
+      line-height:1.6;
+      transition:max-height 0.4s ease,padding 0.4s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height:250px;
+      padding:10px 20px 16px;
+    }
+
+    #faqSearch:focus {
+      border-color:#00796b;
+      box-shadow:0 0 10px rgba(0,150,136,0.3);
+    }
+
+    @media(max-width:768px){
+      h2 {font-size:1.8rem;}
+      .faq-question {font-size:1rem;}
+    }
+    /* Footer styling RWH theme */
+    .rwh-footer {
+          background: linear-gradient(135deg, #062456, #004d40);
+          color: #f1f1f1;
+          padding-top: 50px;
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          /* border-top: 5px solid #062456; */
+      }
+
+      .footer-container {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px 40px;
+          flex-wrap: wrap;
+      }
+
+      .footer-col {
+          width: 30%;
+          margin: 10px 0;
+      }
+
+      .footer-col h3 {
+          color: white;
+          font-size: 1.3em;
+          margin-bottom: 25px;
+          border-bottom: 2px solid #e0f7fa;
+          padding-bottom: 8px;
+      }
+
+      .footer-col.links ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .footer-col.links ul li a {
+          color: #ccc;
+          text-decoration: none;
+          display: block;
+          padding: 5px 0;
+          transition: color 0.3s;
+      }
+
+      .footer-col.links ul li a:hover {
+          color: #004d40;
+          padding-left: 5px;
+      }
+
+      /* Social Icons Styling */
+      .social-icons a {
+          color: #f1f1f1;
+          font-size: 24px;
+          margin-right: 15px;
+          transition: color 0.3s, transform 0.3s;
+      }
+
+      .social-icons a:hover {
+          color: #004d40;
+          transform: scale(1.1);
+      }
+
+
+      .contact-info {
+          margin-top: 20px;
+          font-size: 0.9em;
+          cursor: pointer;
+          color: #f1f1f1;
+      }
+
+      .contact-info p i:hover {
+          color: #004d40;
+      }
+
+
+      /* Footer Bottom Bar */
+      .footer-bottom-bar {
+          background: linear-gradient(135deg, #062456, #004d40);
+          text-align: center;
+          padding: 15px 0;
+          font-size: 0.85em;
+          color: white;
+          border-top: 2px solid #062456
+      }
+  </style>
+
+  <script>
+    const faqItems=document.querySelectorAll(".faq-item");
+    faqItems.forEach(item=>{
+      item.addEventListener("click",()=>{
+        item.classList.toggle("active");
+        faqItems.forEach(i=>{if(i!==item)i.classList.remove("active");});
+      });
+    });
+    const search=document.getElementById("faqSearch");
+    const allFaqs=document.querySelectorAll(".faq-item");
+    search.addEventListener("keyup",()=>{
+      const val=search.value.toLowerCase();
+      allFaqs.forEach(f=>{
+        const q=f.querySelector(".faq-question").textContent.toLowerCase();
+        f.style.display=q.includes(val)?"block":"none";
+      });
+    });
+  </script>
+</section>
+<footer class="rwh-footer">
+  <div class="footer-container">
+      <div class="footer-col about">
+          <h3> 💧 RainHarvest Vision</h3>
+          <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+          </p>
+          <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+      </div>
+
+      <div class="footer-col links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+              <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+              <li><a href="review.html"><i class="fas fa-star"></i> Reviews </a></li>
+          </ul>
+      </div>
+
+      <div class="footer-col social">
+          <h3>Connect with Us</h3>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+              <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom-bar">
+      &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>
