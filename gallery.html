@@ -1,493 +1,563 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rain Water Harvesting - Side Layout</title>  <!-- Bootstrap CSS -->  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <title>Rain Water Harvesting - Side Layout</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts for better typography -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap"
-      rel="stylesheet">  <style>
-      body {
-       background:linear-gradient(135deg,#062456,#004d40);
-        font-family: 'Open Sans', sans-serif;
-      }
-  
-      /* Section Heading */
-      .section-heading {
-        font-size: 3rem;
-        background: #004d40;
-        color: white;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        border-radius: 15px;
-      }
-  
-      /* Sub-heading for message under main title */
-      .sub-heading {
-        font-size: 1.5rem;
-        text-align: center;
-        color: white;
-        background:#004d40;
-        margin-bottom: 60px;
-        font-weight: 500;
-        border-radius: 10px;
-      }
-  
-      /* Parallax Effect */
-      .parallax {
-        background-image: url('https://images.unsplash.com/photo-1501594907353-cf1c2540e3a3');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-size: 3rem;
-        font-weight: 700;
-      }
-  
-      .gallery-section {
-        padding: 80px 0;
-      }
-  
-      .gallery-box {
-        /* background: #fff; */
-        background:linear-gradient(135deg,#062456,#004d40);
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 40px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        transition: 0.3s ease;
-        overflow: hidden;
-        /* border-left: 5px solid #007bff; */
-        border: 2px solid #007bff;
-      }
-  
-      .gallery-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
-      }
-  
-      .gallery-img img,
-      .gallery-img iframe {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-      }
-  
-      .gallery-img img:hover,
-      .gallery-img iframe:hover {
-        transform: scale(1.05);
-      }
-  
-      .gallery-text h4 {
-        color: #007bff;;
-        margin-bottom: 20px;
-        font-size: 1.75rem;
-        font-weight: 600;
-      }
-  
-      .gallery-text p {
-        color: white;
-        line-height: 1.8;
-        font-size: 1rem;
-      }
-  
-      .gallery-text ul {
-        padding-left: 20px;
-        color: white;
-      }
-  
-      .gallery-text ul li {
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-  
-      /* Custom Button */
-      .btn-details {
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 5px;
-        padding: 12px 20px;
-        font-size: 1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        border: none;
-      }
-  
-      .btn-details:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-      }
-  
-      /* Responsive Layout */
-      @media (max-width: 768px) {
-  
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #062456, #004d40);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            font-size: 3rem;
+            background: #004d40;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            text-align: center;
+            color: white;
+            background: #004d40;
+            margin-bottom: 60px;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        /* --- Navbar Styling --- */
+        .navbar-custom {
+            background: linear-gradient(135deg, #062456, #004d40);
+            padding: 10px 20px;
+        }
+
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+        }
+
+        .search-input {
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 7px 12px;
+            border-radius: 5px;
+            border: none;
+            background: #007fbf;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: #005f87;
+            transform: translateY(-2px);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1501594907353-cf1c2540e3a3');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+        }
+
+        .gallery-box {
+            background: linear-gradient(135deg, #062456, #004d40);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            border: 2px solid #007bff;
+            transition: 0.3s ease;
+        }
+
+        .gallery-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+        }
+
         .gallery-img img,
         .gallery-img iframe {
-          height: 250px;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
         }
-  
-        .section-heading {
-          font-size: 2rem;
+
+        .gallery-img img:hover,
+        .gallery-img iframe:hover {
+            transform: scale(1.05);
         }
-      }
-       /* Footer styling RWH theme */
-      .rwh-footer {
+
+        .gallery-text h4 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .gallery-text p {
+            color: white;
+            line-height: 1.8;
+        }
+
+        .gallery-text ul {
+            padding-left: 20px;
+        }
+
+        .gallery-text ul li {
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Buttons */
+        .btn-details {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-details:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Navbar Styling */
+        /* .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            flex-wrap: wrap;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-left: 40px;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li {
+            margin: 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        } */
+
+        /* Search & Buttons */
+        /* .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+            flex-wrap: wrap;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px;
+            height: 35px;
+            width: 140px;
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #007fbf;
+            background: #007fbf;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            height: 35px;
+        } */
+
+        /* Responsive Fix for Navbar */
+        /* @media (max-width: 992px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                margin-left: 0;
+            }
+            .action-buttons-group {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .search-input {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            .sub-heading {
+                font-size: 1.2rem;
+            }
+            .gallery-img img,
+            .gallery-img iframe {
+                height: 230px;
+            }
+        } */
+
+        /* Footer */
+        /* .rwh-footer {
             background: linear-gradient(135deg, #062456, #004d40);
             color: #f1f1f1;
             padding-top: 50px;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            /* border-top: 5px solid #062456; */
         }
-  
+
         .footer-container {
             display: flex;
             justify-content: space-between;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
+            margin: auto;
+            padding: 20px;
             flex-wrap: wrap;
         }
-  
+
         .footer-col {
             width: 30%;
-            margin: 10px 0;
+            min-width: 250px;
         }
-  
-        .footer-col h3 {
-            color: white;
-            font-size: 1.3em;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e0f7fa;
-            padding-bottom: 8px;
+
+        @media (max-width: 768px) {
+            .footer-col {
+                width: 100%;
+                text-align: center;
+            }
         }
-  
-        .footer-col.links ul {
-            list-style: none;
-            padding: 0;
-        }
-  
-        .footer-col.links ul li a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            padding: 5px 0;
-            transition: color 0.3s;
-        }
-  
-        .footer-col.links ul li a:hover {
-            color: #004d40;
-            padding-left: 5px;
-        }
-  
-        /* Social Icons Styling */
-        .social-icons a {
-            color: #f1f1f1;
-            font-size: 24px;
-            margin-right: 15px;
-            transition: color 0.3s, transform 0.3s;
-        }
-  
-        .social-icons a:hover {
-            color: #004d40;
-            transform: scale(1.1);
-        }
-  
-  
-        .contact-info {
-            margin-top: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-            color: #f1f1f1;
-        }
-  
-        .contact-info p i:hover {
-            color: #004d40;
-        }
-  
-  
-        /* Footer Bottom Bar */
+
         .footer-bottom-bar {
+            background: #062456;
+            text-align: center;
+            padding: 12px 0;
+            color: white;
+        } */
+        
+        /* Footer */
+        .rwh-footer {
             background: linear-gradient(135deg, #062456, #004d40);
+            color: #f1f1f1;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-col {
+            margin-bottom: 20px;
+        }
+
+        .footer-col h3 {
+            border-bottom: 2px solid #e0f7fa;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom-bar {
             text-align: center;
             padding: 15px 0;
-            font-size: 0.85em;
-            color: white;
-            border-top: 2px solid #062456
+            margin-top: 10px;
+            border-top: 2px solid #062456;
         }
-        /* --- Navbar Styling --- */
-          .navbar {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              background: linear-gradient(135deg, #062456, #004d40);
-              color: white;
-              padding: 15px 50px;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          }
-  
-          .logo a {
-              color: white;
-              text-decoration: none;
-              font-size: 1.8em;
-              font-weight: bold;
-          }
-          .nav-links {
-              list-style: none;
-              display: flex;
-              margin: 0;
-              padding: 0;
-          }
-  
-          .nav-links li {
-              margin-left: 20px;
-          }
-  
-          .nav-links a {
-              color: white;
-              text-decoration: none;
-              font-size: 1.1em;
-              padding: 8px 12px;
-              border-radius: 5px;
-              transition: background-color 0.3s;
-          }
-  
-          .nav-links a:hover,
-          .nav-links a.active {
-              background: linear-gradient(135deg, #062456, #004d40);
-              color: #fff;
-          }
-  
-          .action-buttons-group {
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              margin-left: auto;
-          }
-  
-          .search-section {
-              display: flex;
-              align-items: center;
-              gap: 5px;
-          }
-  
-          .search-input {
-              padding: 7px 10px;
-              border: none;
-              border-radius: 4px 0 0 4px;
-              font-size: 14px;
-              height: 35px;
-              width: 130px;
-              box-sizing: border-box;
-  
-          }
-  
-          .search-button,
-          .login-button,
-          .signup-button {
-              padding: 8px 12px;
-              border: 1px solid #007fbf;
-              border-radius: 4px;
-              cursor: pointer;
-              font-size: 14px;
-              background: linear-gradient(135deg, #062456, #004d40);
-              color: white;
-              font-weight: bold;
-              height: 35px;
-              box-sizing: border-box;
-              text-decoration: none;
-          }
-  
-          .search-button {
-              background-color: #007fbf;
-              color: white;
-          }
-  
-          .login-button,
-          .signup-button {
-              background-color: #007fbf;
-              color: white;
-              border: 1px solid #007fbf;
-          }
-           /* Transition for smooth hover effect on all interactive buttons */
-          .search-button,
-          .login-button,
-          .signup-button,
-          .cta-button,
-          .alert-link-btn {
-              transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-          }
-  
-          /* Hover effect for Search, Login, and Sign Up buttons */
-          .search-button:hover,
-          .login-button:hover,
-          .signup-button:hover {
-              background: linear-gradient(135deg, #007fbf, #004d40);
-              transform: translateY(-2px);
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-              border: 1px solid #007fbf;
-          }
-  
+
     </style>
-    </head>
-    <body>
-      <header>
-          <nav class="navbar">
-              <div class="logo">
-                  <a href="index.html">💧 Rain Harvest</a>
-              </div>
-  
-              <ul class="nav-links">
-                  <li><a href="index.html" class="active">Home</a></li>
-                  <li><a href="review.html"> Review </a></li>
-                  <li><a href="benefits.html">Benefits</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="faq.html">Faq</a></li>
-              </ul>
-  
-              <div class="action-buttons-group">
-                  <div class="search-section">
-                      <input type="text" placeholder="Search" class="search-input">
-                      <button type="submit" class="search-button">Search</button>
-                  </div>
-                  <div class="mx-2">
-                      <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
-                      <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
-                  </div>
-              </div>
-          </nav>
-      </header>
-        <!-- Gallery Section --> 
-          <div class="container gallery-section">
-      <h2 class="section-heading">💧 Rain Water Harvesting Gallery 💧</h2>
-      <p class="sub-heading">🌧️Save Water, Save the Future and Life🌧️</p><!-- Box 1: Rainwater Storage Tank -->
-  <div class="gallery-box">
-    <div class="row align-items-center">
-      <div class="col-md-6 gallery-img">
-        <img
-          src="https://images.unsplash.com/photo-1692397733387-632c32c500d5?q=80&w=385&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Rainwater Storage Tank">
-      </div>
-      <div class="col-md-6 gallery-text">
-        <h4>Rainwater Storage Tank</h4>
-        <p>This tank collects and stores rainwater from rooftops for gardening, washing, and more. It provides a
-          natural and eco-friendly way to save water and reduce daily usage.</p>
-        <p><strong>Logical Benefit:</strong> By using a rainwater storage tank, you reduce dependency on municipal
-          water systems, helping conserve precious resources and lower utility bills.</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Box 2: Rainwater Harvesting Process -->
-  <div class="gallery-box">
-    <div class="row align-items-center">
-      <div class="col-md-6 gallery-img">
-        <iframe src="https://www.youtube.com/embed/I4V0QiyKAYs?si=m-qrdLu_qU3xrg64" allowfullscreen></iframe>
-      </div>
-      <div class="col-md-6 gallery-text">
-        <h4>Rainwater Harvesting Process</h4>
-        <p>Rainwater harvesting involves the collection and storage of rainwater from roofs or other surfaces. The
-          water is filtered and stored for later use, such as irrigation, cleaning, or even for non-potable household
-          use.</p>
-        <p><strong>Step-by-Step Process:</strong></p>
-        <ul>
-          <li><strong>Step 1:</strong> Water is collected from the rooftop or other surfaces via gutters and
-            downspouts.</li>
-          <li><strong>Step 2:</strong> Water is filtered to remove debris and contaminants.</li>
-          <li><strong>Step 3:</strong> The filtered water is then stored in a tank for future use.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Box 3: Filtration System -->
-  <div class="gallery-box">
-    <div class="row align-items-center">
-      <div class="col-md-6 gallery-img">
-        <img
-          src="https://cdn11.bigcommerce.com/s-o4efq9x/images/stencil/1280x1280/products/403/3347/4_steps_rainwater_harvesting_cleaning_system_800x800__91609.1574847136.jpg?c=3"
-          alt="Filtration System">
-      </div>
-      <div class="col-md-6 gallery-text">
-        <h4>Filtration System</h4>
-        <p>The filtration system removes dust, leaves, and other impurities before the rainwater enters the storage
-          tank, ensuring safe and clean water collection.</p>
-        <p><strong>Logical Benefit:</strong> A proper filtration system ensures that the water you collect is clean
-          and free from harmful contaminants, making it safe for use in gardens and cleaning tasks.</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Box 4: Benefits of Rainwater Harvesting -->
-  <div class="gallery-box">
-    <div class="row align-items-center">
-      <div class="col-md-6 gallery-img">
-        <iframe src="https://www.youtube.com/embed/qtoAshg4PcU?si=cKw4CdsS0_7t_JZW" allowfullscreen></iframe>
-       </div>
-      <div class="col-md-6 gallery-text">
-        <h4>Benefits of Rainwater Harvesting</h4>
-        <p>Rainwater harvesting offers several benefits, from reducing water bills to conserving the environment. It’s
-          a sustainable practice that can be implemented at home or in communities to provide an alternative water
-          source.</p>
-        <ul>
-          <li>Reduces dependency on groundwater and municipal water systems.</li>
-          <li>Helps in flood reduction by managing rainwater runoff.</li>
-          <li>Reduces water bills and saves on energy costs associated with pumping water.</li>
-          <li>Supports sustainable agriculture and gardening practices.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-    </div>
-    <footer class="rwh-footer">
-    <div class="footer-container">
-        <div class="footer-col about">
-            <h3> 💧 RainHarvest Vision</h3>
-            <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
-            </p>
-            <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+</head>
+
+<body>
+
+<header>
+    <!-- <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">💧 Rain Harvest</a>
         </div>
-  
-        <div class="footer-col links">
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="benefits.html">Benefits</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">Faq</a></li>
+        </ul>
+
+        <div class="action-buttons-group">
+            <div class="search-section">
+                <input type="text" class="search-input" placeholder="Search">
+                <button class="search-button">Search</button>
+            </div>
+
+            <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+            <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+        </div>
+    </nav> -->
+    <!-- ---------- NAVBAR ---------- -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="index.html">💧 Rain Harvest</a>
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="fas fa-bars text-white"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="review.html">Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+            </ul>
+
+            <form class="d-flex mb-2 mb-lg-0">
+                <input class="form-control search-input me-2" type="search" placeholder="Search">
+                <button class="search-button">Search</button>
+            </form>
+
+            <div class="d-flex ms-lg-3 mt-2 mt-lg-0">
+                <button class="login-button me-2" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+</header>
+
+<!-- Gallery Section -->
+<div class="container gallery-section">
+
+    <h2 class="section-heading">💧 Rain Water Harvesting Gallery 💧</h2>
+    <p class="sub-heading">🌧️Save Water, Save the Future and Life🌧️</p>
+
+    <!-- Box 1 -->
+    <div class="gallery-box">
+        <div class="row align-items-center">
+            <div class="col-md-6 gallery-img">
+                <img src="https://images.unsplash.com/photo-1692397733387-632c32c500d5?q=80&w=385&auto=format&fit=crop" alt="">
+            </div>
+            <div class="col-md-6 gallery-text">
+                <h4>Rainwater Storage Tank</h4>
+                <p>This tank collects and stores rainwater for gardening, washing, and more.</p>
+                <p><strong>Benefit:</strong> Reduce dependency on municipal water.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="gallery-box">
+        <div class="row align-items-center">
+            <div class="col-md-6 gallery-img">
+                <iframe src="https://www.youtube.com/embed/I4V0QiyKAYs?si=m-qrdLu_qU3xrg64" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6 gallery-text">
+                <h4>Rainwater Harvesting Process</h4>
+                <p>Water is collected from surfaces, filtered, and stored.</p>
+                <ul>
+                    <li>Collection</li>
+                    <li>Filtration</li>
+                    <li>Storage</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="gallery-box">
+        <div class="row align-items-center">
+            <div class="col-md-6 gallery-img">
+                <img src="https://cdn11.bigcommerce.com/s-o4efq9x/images/stencil/1280x1280/products/403/3347/4_steps_rainwater_harvesting_cleaning_system_800x800__91609.1574847136.jpg" alt="">
+            </div>
+            <div class="col-md-6 gallery-text">
+                <h4>Filtration System</h4>
+                <p>Removes dust, leaves, and impurities.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Box 4 -->
+    <div class="gallery-box">
+        <div class="row align-items-center">
+            <div class="col-md-6 gallery-img">
+                <iframe src="https://www.youtube.com/embed/qtoAshg4PcU?si=cKw4CdsS0_7t_JZW" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6 gallery-text">
+                <h4>Benefits of Rainwater Harvesting</h4>
+                <ul>
+                    <li>Reduces dependency on groundwater.</li>
+                    <li>Reduces bills.</li>
+                    <li>Helps prevent flooding.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer
+<footer class="rwh-footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>💧 RainHarvest Vision</h3>
+            <p>Rainwater harvesting saves water and supports the environment.</p>
+        </div>
+
+        <div class="footer-col">
             <h3>Quick Links</h3>
-            <ul>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="review.html"><i class="fas fa-star"></i> Reviews </a></li>
+            <p><a href="about.html" class="text-light">About Us</a></p>
+            <p><a href="faq.html" class="text-light">FAQ</a></p>
+            <p><a href="contact.html" class="text-light">Contact</a></p>
+            <p><a href="review.html" class="text-light">Reviews</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Connect with Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Pakistan</p>
+            <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+        © 2025 Rainwater Harvesting Project. All Rights Reserved.
+    </div>
+</footer> -->
+<!-- ---------- FOOTER ---------- -->
+<footer class="rwh-footer">
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 footer-col">
+            <h3>💧 RainHarvest Vision</h3>
+            <p>Rainwater harvesting is a sustainable method of collecting rainwater for later use.</p>
+            <p>Reduce water scarcity and promote environmental balance.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-col">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled">
+                <li><a href="about.html" class="text-white">About Us</a></li>
+                <li><a href="faq.html" class="text-white">FAQ</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+                <li><a href="review.html" class="text-white">Review</a></li>
             </ul>
         </div>
-  
-        <div class="footer-col social">
+
+        <div class="col-lg-4 col-md-12 footer-col">
             <h3>Connect with Us</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+
+            <div class="d-flex gap-3 fs-3">
+                <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
-                <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
-            </div>
+
+            <p class="mt-3"><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+            <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
         </div>
+
     </div>
-  
+
     <div class="footer-bottom-bar">
         &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
     </div>
-  </footer>
-  </body>
-  </html>
+</footer>
+</body>
+</html>
