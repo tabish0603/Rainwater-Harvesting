@@ -1,0 +1,556 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Rainwater Harvesting Benefits</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <style>
+        .benefits-header {
+          text-align:center;
+          margin-bottom:50px;
+          color:white;
+          animation:fadeInDown 1s ease;
+        }
+        @keyframes fadeInDown {
+          from{opacity:0;transform:translateY(-20px);}
+          to{opacity:1;transform:translateY(0);}
+        }
+        .card {
+          border: 2px solid #007bf7;
+          border-radius:18px;
+          overflow:hidden;
+          box-shadow:0 10px 25px rgba(0,0,0,0.1);
+          transition:transform 0.4s, box-shadow 0.4s;
+          cursor:pointer;
+        }
+        .card:hover {
+          transform:translateY(-8px);
+          box-shadow:0 15px 30px rgba(0,0,0,0.2);
+        }
+        .card img {
+          height:220px;
+          object-fit:cover;
+          transition:0.5s;
+        }
+        .card:hover img {
+          transform:scale(1.05);
+          filter:brightness(1.1);
+        }
+        .card-body {
+          background: linear-gradient(135deg, #062456, #004d40);
+          padding:20px;
+          transition:0.4s;
+        }
+        .card-title {
+          color:white;
+          font-weight:700;
+          font-size:1.25rem;
+        }
+        .card-text {
+          color:white;
+          font-size:1rem;
+          line-height:1.6;
+        }
+        .extra-info {
+          display:none;
+          margin-top:10px;
+          font-size:0.95rem;
+          color:white;
+          border-top:1px solid #b2dfdb;
+          padding-top:10px;
+        }
+        .card.expanded .extra-info {
+          display:block;
+          animation:fadeIn 0.6s ease;
+        }
+        @keyframes fadeIn {
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+        /* Footer styling RWH theme */
+      .rwh-footer {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #f1f1f1;
+            padding-top: 50px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            /* border-top: 5px solid #062456; */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            width: 30%;
+            margin: 10px 0;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0f7fa;
+            padding-bottom: 8px;
+        }
+
+        .footer-col.links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-col.links ul li a:hover {
+            color: #004d40;
+            padding-left: 5px;
+        }
+
+        /* Social Icons Styling */
+        .social-icons a {
+            color: #f1f1f1;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: #f1f1f1;
+        }
+
+        .contact-info p i:hover {
+            color: #004d40;
+        }
+
+
+        /* Footer Bottom Bar */
+        .footer-bottom-bar {
+            background: linear-gradient(135deg, #062456, #004d40);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85em;
+            color: white;
+            border-top: 2px solid #062456
+        }
+         /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            height: 35px;
+            width: 130px;
+            box-sizing: border-box;
+
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border: 1px solid #007fbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .search-button {
+            background-color: #007fbf;
+            color: white;
+        }
+
+        .login-button,
+        .signup-button {
+            background-color: #007fbf;
+            color: white;
+            border: 1px solid #007fbf;
+        }
+         /* Transition for smooth hover effect on all interactive buttons */
+        .search-button,
+        .login-button,
+        .signup-button,
+        .cta-button,
+        .alert-link-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for Search, Login, and Sign Up buttons */
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #007fbf;
+        }
+
+
+      </style>
+    </head>
+    <body>
+     <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">💧 Rain Harvest</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="review.html"> Review </a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+
+            <div class="action-buttons-group">
+                <div class="search-section">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+                <div class="mx-2">
+                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+     <!--login Modal -->
+     <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content" style="background:linear-gradient(135deg,#062456,#004d40)">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="LoginModalLabel" style="color: white;">SignIn RainHarvest</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label" style="color: white;">Email
+                              address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1"
+                              aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email
+                              with anyone else.</div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+                      <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1" style="color: white;">Check me
+                              out</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!--SignUp Modal -->
+  <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content" style="background:linear-gradient(135deg,#062456,#004d40)">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="SignUpModalLabel" style="color: white;">Get An RainHarvest Account
+                  </h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label" style="color: white;">Email
+                              address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1"
+                              aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email
+                              with anyone else.</div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+                      <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label" style="color: white;">Confirm
+                              Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                      </div>
+                      <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1" style="color: white;">Check me
+                              out</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+      </div>
+  </div>
+      <section id="benefits" style="padding:80px 20px; background: linear-gradient(135deg, #062456, #004d40);">
+        <div class="benefits-header">
+          <h2>💧 Benefits of Rainwater Harvesting</h2>
+          <p>Discover how every drop saved today secures our water tomorrow.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+          <!-- 1️⃣ Water Conservation -->
+          <div class="col">
+            <div class="card">
+              <img src="https://plus.unsplash.com/premium_photo-1752184057225-66e9a6390458?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074" class="card-img-top" alt="Water Conservation">
+              <div class="card-body">
+                <h5 class="card-title">1️⃣ Water Conservation</h5>
+                <p class="card-text">Reduces dependence on groundwater and ensures long-term water availability.</p>
+                <div class="extra-info">💡 Example: One 100 m² roof can save up to 50,000 liters annually.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2️⃣ Flood Prevention -->
+          <div class="col">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1611564341787-c58f19815b39?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zmxvb2QlMjBwcmV2ZW50aW9uJTIwNDAweDQwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Flood Prevention">
+              <div class="card-body">
+                <h5 class="card-title">2️⃣ Flood Prevention</h5>
+                <p class="card-text">Helps reduce stormwater runoff, minimizing waterlogging and floods.</p>
+                <div class="extra-info">💡 Example: Smart drainage with rain tanks cuts runoff by up to 60%.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3️⃣ Groundwater Recharge -->
+          <div class="col">
+            <div class="card">
+              <img src="https://plus.unsplash.com/premium_photo-1733317205924-b27238c65576?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JvdW5kd2F0ZXIlMjByZWNoYXJnZSUyMDQwMHg0MDB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Groundwater Recharge">
+              <div class="card-body">
+                <h5 class="card-title">3️⃣ Groundwater Recharge</h5>
+                <p class="card-text">Restores natural aquifers and stabilizes underground water levels.</p>
+                <div class="extra-info">💡 Example: Recharge wells can restore entire colonies' aquifers in one monsoon season.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4️⃣ Cost Efficiency -->
+          <div class="col">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1505245208761-ba872912fac0?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Cost Efficiency">
+              <div class="card-body">
+                <h5 class="card-title">4️⃣ Cost Efficiency</h5>
+                <p class="card-text">Lower water bills and infrastructure costs with locally sourced rainwater.</p>
+                <div class="extra-info">💡 Example: Families report up to 35% annual savings on water costs.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5️⃣ Environmental Sustainability -->
+          <div class="col">
+            <div class="card">
+              <img src="https://plus.unsplash.com/premium_photo-1728786029941-e932df7039ca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW52aXJvbm1lbnRhbCUyMFN1c3RhaW5hYmlsaXR5JTIwNDAweDQwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Environmental Sustainability">
+              <div class="card-body">
+                <h5 class="card-title">5️⃣ Environmental Sustainability</h5>
+                <p class="card-text">Promotes eco-friendly practices and reduces environmental strain.</p>
+                <div class="extra-info">💡 Example: Less energy needed for pumping = lower carbon footprint.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6️⃣ Emergency Backup -->
+          <div class="col">
+            <div class="card">
+              <img src="https://plus.unsplash.com/premium_photo-1737597230598-8561be1d98f3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW1lcmdlbmN5JTIwV2F0ZXIlMjBCYWNrdXAlMjA0MDB4NDAwfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Emergency Backup">
+              <div class="card-body">
+                <h5 class="card-title">6️⃣ Emergency Water Backup</h5>
+                <p class="card-text">Acts as a backup water source during droughts or shortages.</p>
+                <div class="extra-info">💡 Example: Stored water sustains up to 15 days in dry spells.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7️⃣ Improved Soil Moisture -->
+          <div class="col">
+            <div class="card">
+              <img src="https://plus.unsplash.com/premium_photo-1661898576447-3c1d23fb1f3f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SW1wcm92ZWQlMjBTb2lsJTIwTW9pc3R1cmUlMjA0MDB4NDAwfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Improved Soil Moisture">
+              <div class="card-body">
+                <h5 class="card-title">7️⃣ Improved Soil Moisture</h5>
+                <p class="card-text">Keeps soil fertile and supports plant and crop growth.</p>
+                <div class="extra-info">💡 Example: Soil retains 20% more moisture where rainwater systems exist.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8️⃣ Reduce Water Pollution -->
+          <div class="col">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1581174841205-34a28a3e5859?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UmVkdWNlJTIwV2F0ZXIlMjBQb2xsdXRpb24lMjA0MDB4NDAwfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=400" class="card-img-top" alt="Reduce Water Pollution">
+              <div class="card-body">
+                <h5 class="card-title">8️⃣ Reduce Water Pollution</h5>
+                <p class="card-text">Prevents contaminated runoff from polluting rivers and lakes.</p>
+                <div class="extra-info">💡 Example: Cleaner rain capture reduces surface pollution by up to 50%.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9️⃣ Promotes Green Spaces -->
+          <div class="col">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Promotes Green Spaces">
+              <div class="card-body">
+                <h5 class="card-title">9️⃣ Promotes Green Spaces</h5>
+                <p class="card-text">Supports gardens, parks, and plantations using harvested rainwater.</p>
+                <div class="extra-info">💡 Example: 100% of water for local parks in Delhi is rain-harvested!</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <script>
+          // Expand card and show extra info
+          const cards = document.querySelectorAll('.card');
+          cards.forEach(card => {
+            card.addEventListener('click', () => {
+              cards.forEach(c => c.classList.remove('expanded'));
+              card.classList.toggle('expanded');
+            });
+          });
+        </script>
+      </section>
+
+      <!-- 🌍 Footer -->
+      <footer class="rwh-footer">
+    <div class="footer-container">
+        <div class="footer-col about">
+            <h3> 💧 RainHarvest Vision</h3>
+            <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+            </p>
+            <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+        </div>
+
+        <div class="footer-col links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="review.html"><i class="fas fa-star"></i> Reviews </a></li>
+            </ul>
+            </ul>
+        </div>
+
+        <div class="footer-col social">
+            <h3>Connect with Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+                <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+        &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+    </div>
+  </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+  </html>

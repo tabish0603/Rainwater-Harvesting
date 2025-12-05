@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainwater Contact Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    @keyframes drop {
+      0% {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(100vh);
+        opacity: 0.5;
+      }
+    }
+
+    .water-drop {
+      position: absolute;
+      top: 0;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 150, 136, 0.4);
+      border-radius: 50%;
+      animation: drop linear infinite;
+    }
+
+    .contact-wrapper {
+      position: relative;
+      max-width: 850px;
+      margin: auto;
+        background:linear-gradient(135deg,#062456,#004d40);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      padding: 60px 40px;
+      text-align: center;
+      color: #004d40;
+      animation: fadeIn 1.2s ease forwards;
+      z-index: 2;
+      border: 2px solid #007bf7;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-wrapper h2 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .contact-wrapper p {
+      color: white;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .form-field {
+      position: relative;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.85);
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      box-shadow: 0 0 10px rgba(0, 191, 165, 0.5);
+      background: #fff;
+    }
+
+    label {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      color: #666;
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label,
+    textarea:focus+label,
+    textarea:not(:placeholder-shown)+label {
+      top: -10px;
+      left: 12px;
+      font-size: 0.8rem;
+      color: #00796b;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0 6px;
+      border-radius: 6px;
+    }
+
+    button {
+       background: linear-gradient(135deg, #062456, #004d40);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: 2px solid #007bf7;
+      border-radius: 16px;
+      padding: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+        background: #007bf7;
+      transform: scale(1.05);
+    }
+
+    .geo-btn {
+      margin-top: 8px;
+       background: linear-gradient(135deg, #062456, #004d40);
+      border: 2px solid #007bf7;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .geo-btn:hover {
+      background: #007bf7;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 25px;
+      background: rgba(0, 191, 165, 0.1);
+      padding: 15px;
+      border-radius: 14px;
+      color: #004d40;
+      font-weight: 600;
+      animation: popIn 0.5s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-6px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(6px);
+      }
+    }
+
+    .error-border {
+      border-color: #e57373 !important;
+      animation: shake 0.4s ease;
+    }
+
+    .valid-border {
+      border-color: #00bfa5 !important;
+    }
+
+    .map-container {
+      margin-top: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    @media(max-width:600px) {
+      .contact-wrapper {
+        padding: 40px 25px;
+      }
+
+      .contact-wrapper h2 {
+        font-size: 2rem;
+      }
+
+      .map-container {
+        height: 250px;
+      }
+    }
+     /* Footer styling RWH theme */
+    .rwh-footer {
+          background: linear-gradient(135deg, #062456, #004d40);
+          color: #f1f1f1;
+          padding-top: 50px;
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          /* border-top: 5px solid #062456; */
+      }
+
+      .footer-container {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px 40px;
+          flex-wrap: wrap;
+      }
+
+      .footer-col {
+          width: 30%;
+          margin: 10px 0;
+      }
+
+      .footer-col h3 {
+          color: white;
+          font-size: 1.3em;
+          margin-bottom: 25px;
+          border-bottom: 2px solid #e0f7fa;
+          padding-bottom: 8px;
+      }
+
+      .footer-col.links ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .footer-col.links ul li a {
+          color: #ccc;
+          text-decoration: none;
+          display: block;
+          padding: 5px 0;
+          transition: color 0.3s;
+      }
+
+      .footer-col.links ul li a:hover {
+          color: #004d40;
+          padding-left: 5px;
+      }
+
+      /* Social Icons Styling */
+      .social-icons a {
+          color: #f1f1f1;
+          font-size: 24px;
+          margin-right: 15px;
+          transition: color 0.3s, transform 0.3s;
+      }
+
+      .social-icons a:hover {
+          color: #004d40;
+          transform: scale(1.1);
+      }
+
+
+      .contact-info {
+          margin-top: 20px;
+          font-size: 0.9em;
+          cursor: pointer;
+          color: #f1f1f1;
+      }
+
+      .contact-info p i:hover {
+          color: #004d40;
+      }
+
+
+      /* Footer Bottom Bar */
+      .footer-bottom-bar {
+          background: linear-gradient(135deg, #062456, #004d40);
+          text-align: center;
+          padding: 15px 0;
+          font-size: 0.85em;
+          color: white;
+          border-top: 2px solid #062456
+      }
+      /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            height: 35px;
+            width: 130px;
+            box-sizing: border-box;
+
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border: 1px solid #007fbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .search-button {
+            background-color: #007fbf;
+            color: white;
+        }
+
+        .login-button,
+        .signup-button {
+            background-color: #007fbf;
+            color: white;
+            border: 1px solid #007fbf;
+        }
+         /* Transition for smooth hover effect on all interactive buttons */
+        .search-button,
+        .login-button,
+        .signup-button,
+        .cta-button,
+        .alert-link-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for Search, Login, and Sign Up buttons */
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #007fbf;
+        }
+  </style>
+</head>
+
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">💧 Rain Harvest</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="review.html"> Review </a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+
+            <div class="action-buttons-group">
+                <div class="search-section">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+                <div class="mx-2">
+                  <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                  <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+              </div>
+
+            </div>
+        </nav>
+    </header>
+    
+  <section id="contact"
+    style="position:relative;overflow:hidden; background:#062456;padding:80px 20px;">
+
+    <!-- Rain Drops -->
+    <script>
+      for (let i = 0; i < 25; i++) {
+        const drop = document.createElement('div');
+        drop.classList.add('water-drop');
+        drop.style.left = Math.random() * 100 + '%';
+        drop.style.animationDuration = 3 + Math.random() * 4 + 's';
+        drop.style.animationDelay = Math.random() * 3 + 's';
+        document.getElementById('contact').appendChild(drop);
+      }
+    </script>
+
+    <div class="contact-wrapper">
+      <h2>Contact & Join the Rainwater Revolution 💧</h2>
+      <p>Connect with us to make your home or community water-sustainable. Every drop matters!</p>
+
+      <form id="rainForm" onsubmit="return validateForm()">
+        <div class="form-field">
+          <input type="text" id="name" placeholder=" " onblur="validateField(this)">
+          <label for="name">Full Name</label>
+        </div>
+
+        <div class="form-field">
+          <input type="email" id="email" placeholder=" " onblur="validateField(this)">
+          <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-field">
+          <input type="text" id="location" placeholder=" " onblur="validateField(this)">
+          <label for="location">Your Location</label>
+        </div>
+
+        <button type="button" id="geoBtn" class="geo-btn">Auto Detect</button>
+
+        <div class="form-field">
+          <input type="number" id="usage" placeholder=" " onblur="validateField(this)">
+          <label for="usage">Daily Water Usage (liters)</label>
+        </div>
+
+        <div class="form-field">
+          <select id="interest" onblur="validateField(this)">
+            <option value="">-- Select Your Interest --</option>
+            <option value="home">Home Harvesting</option>
+            <option value="community">Community Project</option>
+            <option value="business">Business Setup</option>
+            <option value="education">Educational Program</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <textarea id="message" placeholder=" " onblur="validateField(this)"></textarea>
+          <label for="message">Your Message</label>
+        </div>
+
+        <div class="form-field">
+          <select id="city" onblur="validateField(this)">
+            <option value="">-- Select Your City --</option>
+            <option value="karachi">Karachi</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="lahore">Lahore</option>
+            <option value="islamabad">Islamabad</option>
+          </select>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="successMsg" class="success-msg">
+        ✅ Thank you for contacting us! We’ll reach out soon.
+      </div>
+
+      <!-- Map -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.123456789012!2d67.001234!3d24.861123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f1234567890%3A0xabcdef1234567890!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <script>
+      // 📍 Geolocation Fixed
+      const geoBtn = document.getElementById('geoBtn');
+      const locInput = document.getElementById('location');
+
+      geoBtn.addEventListener('click', () => {
+        if (!navigator.geolocation) return alert("Geolocation not supported");
+        geoBtn.textContent = "⏳ Locating...";
+
+        navigator.geolocation.getCurrentPosition(pos => {
+          const { latitude, longitude } = pos.coords;
+          locInput.value = `Lat: ${latitude.toFixed(4)}, Lon: ${longitude.toFixed(4)}`;
+          geoBtn.textContent = "Done ✅";
+        }, err => {
+          alert("Error: " + err.message);
+          geoBtn.textContent = "Auto Detect";
+        });
+      });
+
+      // Validation
+      function validateField(field) {
+        const value = field.value.trim();
+        let valid = true;
+
+        if (!value) {
+          field.classList.remove('valid-border');
+          field.classList.add('error-border');
+          valid = false;
+        } else if (field.id === "email" && !/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(value)) {
+          field.classList.add('error-border');
+          valid = false;
+        } else {
+          field.classList.remove('error-border');
+          field.classList.add('valid-border');
+        }
+        return valid;
+      }
+
+      function validateForm() {
+        const fields = ["name", "email", "location", "usage", "interest", "message", "city"];
+        let allValid = true;
+
+        fields.forEach(id => {
+          const field = document.getElementById(id);
+          if (!validateField(field)) allValid = false;
+        });
+
+        if (!allValid) {
+          alert("⚠️ Please fill all fields correctly before submitting.");
+          return false;
+        }
+
+        document.getElementById('rainForm').reset();
+        document.querySelectorAll('input,select,textarea').forEach(f => f.classList.remove('valid-border'));
+
+        const success = document.getElementById('successMsg');
+        success.style.display = 'block';
+        setTimeout(() => success.style.display = 'none', 4000);
+
+        return false;
+      }
+    </script>
+  </section>
+
+<footer class="rwh-footer">
+  <div class="footer-container">
+      <div class="footer-col about">
+          <h3> 💧 RainHarvest Vision</h3>
+          <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+          </p>
+          <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+      </div>
+
+      <div class="footer-col links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+              <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+              <li><a href="review.html"><i class="fas fa-star"></i> Reviews </a></li>
+          </ul>
+      </div>
+
+      <div class="footer-col social">
+          <h3>Connect with Us</h3>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+              <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom-bar">
+      &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+  </div>
+</footer>
+  
+</body>
+</html>

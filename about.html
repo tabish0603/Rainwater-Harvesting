@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Rainwater Harvesting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color:linear-gradient(135deg,#062456,#004d40);
+      color: #333;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-section {
+      width: 100%;
+      /* margin: 50px auto; */
+      background:linear-gradient(135deg,#062456,#004d40) ;
+      padding: 50px;
+      /* border-radius: 10px; */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .content {
+      flex: 1 1 60%;
+      min-width: 300px;
+      animation: fadeInText 1s ease-in-out;
+    }
+
+    .side-images {
+      flex: 1 1 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      animation: slideInRight 1.2s ease-in-out;
+    }
+
+    .side-images img {
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      animation: fadeInImages 1.5s ease forwards;
+    }
+
+    .side-images img:nth-child(2) { animation-delay: 0.4s; }
+    .side-images img:nth-child(3) { animation-delay: 0.8s; }
+
+    .side-images img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      color: white;
+      margin-bottom: 20px;
+      border-left: 5px solid #3FA796;
+      padding-left: 10px;
+    }
+
+    .about-section h3 {
+      color: white;
+      margin-top: 25px;
+    }
+
+    .about-section p {
+      margin-bottom: 20px;
+      text-align: justify;
+      color: white;
+    }
+
+    .about-section ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .about-section li {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInImages {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .about-section {
+        flex-direction: column;
+        padding: 25px 20px;
+      }
+
+      .side-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: none;
+      }
+
+      .side-images img {
+        width: 45%;
+        animation: fadeInImages 1.2s ease forwards;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .side-images img {
+        width: 100%;
+      }
+
+    }
+
+       .feature-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .feature-card {
+            background:linear-gradient(135deg,#062456,#004d40);
+            color: #002244;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 400px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h4 {
+            color: white;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-body p {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: white;
+        }
+         /* Footer styling RWH theme */
+        .rwh-footer {
+            background: linear-gradient(135deg, #062456, #004d40);
+            width: 100%;
+            color: #f1f1f1;
+            padding-top: 50px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            /* border-top: 5px solid #062456; */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            /* max-width: 1200px; 
+            margin: 0 auto; */
+            padding: 0 50px 40px 50px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            width: 30%;
+            margin: 10px 0;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0f7fa;
+            padding-bottom: 8px;
+            width: fit-content;
+        }
+
+        .footer-col.links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-col.links ul li a:hover {
+            color: #004d40;
+            padding-left: 5px;
+        }
+
+        /* Social Icons Styling */
+        .social-icons a {
+            color: #f1f1f1;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: #f1f1f1;
+        }
+
+        .contact-info p i:hover {
+            color: #004d40;
+        }
+
+
+        /* Footer Bottom Bar */
+        .footer-bottom-bar {
+            background: linear-gradient(135deg, #062456, #004d40);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85em;
+            color: white;
+            border-top: 2px solid #062456
+        }
+        
+  </style>
+</head>
+<body>
+  <section class="about-section">
+    <div class="content">
+      <h2>About Rainwater Harvesting</h2>
+      <p>
+        Out of the 30 million hectares of cultivable land in Pakistan, nearly 12 million hectares (about 40%) are classified as dryland areas. In these regions, livelihoods are entirely dependent on rainfall, as groundwater is either unavailable or too saline for use. This makes rainwater harvesting a crucial practice for sustaining human and livestock populations. Rainwater harvesting is not just a traditional practice—it is a sustainable approach to conserving water for future generations. It plays an important role in addressing water scarcity, supporting agricultural production, and maintaining the ecological balance in arid and semi-arid regions.
+      </p>
+
+      <p>
+        Rainfall is the only reliable source of water in these areas, and the collected rainwater is stored in natural depressions known locally as <strong>tobas</strong> or in underground dugwells called <strong>kunds</strong>. Initially, these water reservoirs were sufficient to meet the needs of small, localized communities and their livestock. However, over time, population growth and livestock numbers have significantly increased, placing additional strain on these limited water resources. Many of the tobass have also silted up, reducing their capacity to store rainwater and making it more difficult for rural communities to survive during dry spells.
+      </p>
+
+      <p>
+        As a result, when local water sources dry up, communities—often nomadic—must migrate in search of water for themselves and their livestock. This migration disrupts livelihoods and increases the vulnerability of both humans and animals to malnutrition and disease. For instance, in the <strong>Cholistan Desert</strong>, approximately 0.1 million people depend on about 2 million livestock, while in the <strong>Thar Desert</strong>, around 1.5 million people rely on nearly 6 million livestock. Without adequate water storage facilities, these regions face severe hardships, especially during prolonged droughts.
+      </p>
+
+      <p>
+        To address these challenges, the development of additional <strong>rainwater harvesting structures</strong> such as small dams, ponds, check dams, and improved tobass is essential. These initiatives can help secure water availability throughout the year, promote rangeland development, and improve the resilience of local communities. By adopting modern rainwater harvesting techniques and integrating them with traditional knowledge, Pakistan can improve its water security and promote sustainable development in vulnerable regions.
+      </p>
+
+      <h3>Key Benefits of Rainwater Harvesting</h3>
+      <ul>
+        <li>Provides a reliable water source for domestic, agricultural, and livestock use.</li>
+        <li>Reduces dependency on groundwater, helping to prevent over-extraction and depletion.</li>
+        <li>Improves soil moisture and increases crop productivity in dryland farming.</li>
+        <li>Helps in flood mitigation by reducing surface runoff during heavy rains.</li>
+        <li>Enhances biodiversity and supports reforestation in arid regions.</li>
+      </ul>
+
+      <h3>Common Rainwater Harvesting Methods</h3>
+      <ul>
+        <li><strong>Surface runoff harvesting:</strong> Collecting rainwater from open fields, roads, or slopes and directing it into ponds or reservoirs.</li>
+        <li><strong>Rooftop rainwater collection:</strong> Storing water from roofs through gutters into storage tanks for household use.</li>
+        <li><strong>Percolation pits and recharge wells:</strong> Allowing rainwater to seep underground to recharge groundwater levels.</li>
+        <li><strong>Check dams and bunds:</strong> Constructing barriers across small streams to slow water flow and promote infiltration.</li>
+      </ul>
+
+      <p>
+        Rainwater harvesting is an ancient yet modern solution to one of today’s biggest challenges—water scarcity. With growing awareness, community participation, and government support, it can play a pivotal role in building a more sustainable and water-secure future for Pakistan.
+      </p>
+    </div>
+
+    <!--  Real Photos that will open -->
+    <div class="side-images">
+      <img src="data:image/jpeg;base64,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" alt="Rainwater harvesting pond in Pakistan">
+      <img src="https://www.researchgate.net/publication/340636467/figure/fig2/AS%3A960320600301577%401605969681639/The-land-use-map-a-and-soil-map-b-of-Pakistan-The-detail-of-soil-labels-can-be-found.png" alt="Map of dryland areas in Pakistan">
+      <img src="data:image/jpeg;base64,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" alt="Community with livestock near rainwater reservoir">
+    </div>
+    <!--cards section-->
+    <section>
+     <div class="feature-cards">
+                <div class="feature-card">
+                    <img src="https://t4.ftcdn.net/jpg/17/76/60/27/240_F_1776602710_zuWmW5sF7KVLdRN01Y14naNIIg7k0NhC.jpg"
+                        alt="Rooftop Collection" class="card-image">
+                    <div class="card-body">
+                        <h4>Outdoor Water Collection</h4>
+                         <p class="card-text">This image shows a rainwater harvesting system where water is channeled from a roof into a storage barrel, representing an efficient and common method of outdoor collection.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://t4.ftcdn.net/jpg/15/18/96/23/240_F_1518962307_SmZh0icfRKNlPRjLmO6HTM2WmxC6zruL.jpg"
+                        alt="Groundwater Recharge" class="card-image">
+                    <div class="card-body">
+                        <h4>Modern Irrigation Techniques</h4>
+                        <p class="card-text">This image shows a field of young crops being watered by overhead sprinklers, creating a misty spray across the plants.
+                         Drip irrigation lines run along the soil, indicating a combination of irrigation methods in use.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img src="https://t3.ftcdn.net/jpg/06/28/86/94/240_F_628869442_iGlwHezw9syIZ6GnAR4nDTKpNktShDTj.jpg"
+                        alt="Filtration System" class="card-image">
+                    <div class="card-body">
+                        <h4>Integrated Water Storage</h4>
+                        <p class="card-text">This image shows an integrated system of modern tanks and filtration, used for large-scale outdoor storage and reuse of collected rainwater, representing an engineered approach to water conservation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+     <footer class="rwh-footer " style="margin-right: 8%;">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h3> 💧 RainHarvest Vision</h3>
+                <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+                </p>
+                <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+            </div>
+
+            <div class="footer-col links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="review.html"><i class="fas fa-star"></i> Review </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col social">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">💧 Rain Harvest</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="review.html"> Review </a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">Faq</a></li>
+            </ul>
+
+            <div class="action-buttons-group">
+                <div class="search-section">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+                <div class="mx-2">
+                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- Full Width Review Section with Footer -->
+<section class="review-full" style="padding:80px 20px;  background: linear-gradient(135deg, #062456, #004d40);">
+
+  <div style="text-align:center; margin-bottom:60px;">
+    <h2 style="font-size:3rem; color:white; margin-bottom:10px; background: #004d40; border-radius: 10px;">What Our Users Say</h2>
+    <p style="font-size:1.2rem; color:white; background: #004d40; border-radius: 15px; max-width:800px; margin:0 auto; background: #004d40; border-radius: 10px;">
+      Real experiences from people who installed rainwater harvesting systems and loved the results.
+    </p>
+  </div>
+
+  <div class="review-grid">
+    <!-- 12 Cards -->
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/1.jpg" class="profile-pic" alt="User1">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Sarah M.</h4>
+      <p class="short">Water bills dropped significantly.</p>
+      <p class="full">Our garden thrives year-round and neighbors got inspired. System maintenance is effortless.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/2.jpg" class="profile-pic" alt="User2">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Ahmed K.</h4>
+      <p class="short">Community garden flourishes.</p>
+      <p class="full">Enough water for all plants. Promotes eco-friendly habits within our neighborhood.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/3.jpg" class="profile-pic" alt="User3">
+      <div class="stars">⭐⭐⭐⭐</div>
+      <h4>Priya S.</h4>
+      <p class="short">Reduced household water usage.</p>
+      <p class="full">Cost-effective and environmentally friendly. Highly recommended for modern households.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/4.jpg" class="profile-pic" alt="User4">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>John D.</h4>
+      <p class="short">Easy maintenance, great water quality.</p>
+      <p class="full">Reliable for gardening and household chores. A total game-changer for eco-living.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/5.jpg" class="profile-pic" alt="User5">
+      <div class="stars">⭐⭐⭐⭐</div>
+      <h4>Fatima R.</h4>
+      <p class="short">Inspired sustainable practices.</p>
+      <p class="full">Neighbors are now adopting rainwater harvesting after seeing our system work well.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/6.jpg" class="profile-pic" alt="User6">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Ali H.</h4>
+      <p class="short">Garden looks amazing.</p>
+      <p class="full">Water savings are significant, and contributing to sustainability feels great.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/7.jpg" class="profile-pic" alt="User7">
+      <div class="stars">⭐⭐⭐⭐</div>
+      <h4>Noor A.</h4>
+      <p class="short">Household sustainability improved.</p>
+      <p class="full">Collecting rainwater improved daily habits and eco-friendliness.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/8.jpg" class="profile-pic" alt="User8">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Omar F.</h4>
+      <p class="short">Eco-conscious & cost-effective.</p>
+      <p class="full">Reduces water consumption while promoting sustainable living.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/9.jpg" class="profile-pic" alt="User9">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Layla K.</h4>
+      <p class="short">Perfect for gardening.</p>
+      <p class="full">Our plants thrive without worrying about water bills or shortages.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/10.jpg" class="profile-pic" alt="User10">
+      <div class="stars">⭐⭐⭐⭐</div>
+      <h4>Hassan R.</h4>
+      <p class="short">Easy setup & maintenance.</p>
+      <p class="full">Installation was simple and the system runs smoothly every season.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/women/11.jpg" class="profile-pic" alt="User11">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Sana T.</h4>
+      <p class="short">Loved the impact.</p>
+      <p class="full">Our water consumption dropped, garden is healthy, and family loves the eco-friendly approach.</p>
+    </div>
+
+    <div class="review-card" onclick="expandCard(this)">
+      <img src="https://randomuser.me/api/portraits/men/12.jpg" class="profile-pic" alt="User12">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h4>Imran S.</h4>
+      <p class="short">Highly recommend.</p>
+      <p class="full">Cost-saving, eco-friendly, and simple to maintain. Great addition to any home.</p>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+    <footer class="rwh-footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h3> 💧 RainHarvest Vision</h3>
+                <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
+                </p>
+                <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+            </div>
+
+            <div class="footer-col links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="faq.html"fas fa-question-circle></i> FAQ</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="review.html"><i class="fas fa-star"></i> Review </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col social">
+                <h3>Connect with Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+        </div>
+    </footer>
+
+
+<style>
+   /* --- Navbar Styling --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #fff;
+        }
+
+        .action-buttons-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-input {
+            padding: 7px 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            height: 35px;
+            width: 130px;
+            box-sizing: border-box;
+
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 8px 12px;
+            border: 1px solid #007fbf;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .search-button {
+            background-color: #007fbf;
+            color: white;
+        }
+
+        .login-button,
+        .signup-button {
+            background-color: #007fbf;
+            color: white;
+            border: 1px solid #007fbf;
+        }
+         /* Transition for smooth hover effect on all interactive buttons */
+        .search-button,
+        .login-button,
+        .signup-button,
+        .cta-button,
+        .alert-link-btn {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for Search, Login, and Sign Up buttons */
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: linear-gradient(135deg, #007fbf, #004d40);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #007fbf;
+        }
+
+     body{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+.review-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.review-card {
+  background:linear-gradient(135deg,#062456,#004d40);
+  border-radius:20px;
+  padding:25px 15px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:transform 0.3s, box-shadow 0.3s;
+  overflow:hidden;
+  border: 2px solid #007fbf;
+}
+
+.review-card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 18px 30px rgba(0,0,0,0.2);
+}
+
+.profile-pic {
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  margin-bottom:10px;
+  object-fit:cover;
+  border:2px solid #007fbf;
+}
+
+.stars {
+  color:#ffd700;
+  margin-bottom:8px;
+}
+
+.review-card h4 {
+  color:white;
+  margin-bottom:6px;
+  font-weight:bolder;
+
+}
+
+.short {
+  color:white;
+  font-size:0.9rem;
+  
+}
+
+.full {
+  color:white;
+  font-size:0.9rem;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  margin-top:8px;
+}
+
+.review-card.expanded .full {
+  max-height:200px;
+}
+
+@media(max-width:1200px){
+  .review-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media(max-width:900px){
+  .review-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:600px){
+  .review-grid { grid-template-columns:1fr; }
+}
+ /* Footer styling RWH theme */
+        .rwh-footer {
+            background: linear-gradient(135deg, #062456, #004d40);
+            color: #f1f1f1;
+            padding-top: 50px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            /* border-top: 5px solid #062456; */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            width: 30%;
+            margin: 10px 0;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0f7fa;
+            padding-bottom: 8px;
+        }
+
+        .footer-col.links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-col.links ul li a:hover {
+            color: #004d40;
+            padding-left: 5px;
+        }
+
+        /* Social Icons Styling */
+        .social-icons a {
+            color: #f1f1f1;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: #f1f1f1;
+        }
+
+        .contact-info p i:hover {
+            color: #004d40;
+        }
+
+
+        /* Footer Bottom Bar */
+        .footer-bottom-bar {
+            background: linear-gradient(135deg, #062456, #004d40);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85em;
+            color: white;
+            border-top: 2px solid #062456
+        }
+</style>
+
+<script>
+function expandCard(card){
+  document.querySelectorAll('.review-card').forEach(c=>{
+    if(c!==card) c.classList.remove('expanded');
+  });
+  card.classList.toggle('expanded');
+}
+</script>
+
+</body>
+</html>
