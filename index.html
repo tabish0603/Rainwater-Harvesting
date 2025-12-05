@@ -12,24 +12,28 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* ---------------------------------------------------------------------- */
-/* 🚀 MOBILE RESPONSIVE FIXES (BELOW 768px) - ADDED FOR STACKING HEADER */
+/* 🚀 MOBILE RESPONSIVE FIXES (BELOW 768px) - UPDATED FOR ALIGNMENT */
 /* ---------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
     /* 1. Fix the Main Navigation Bar (Navbar) */
     .navbar {
-        flex-direction: column; /* Forces all main sections to stack vertically */
+        flex-direction: column; 
         padding: 10px 20px;
-        align-items: flex-start; 
+        /* Ensures the logo and overall content is centered */
+        align-items: center; 
         width: 100%;
     }
     
     /* 2. Fix the Nav Links (Home, Review, Benefits, etc.) */
     .nav-links {
-        display: flex;
-        flex-direction: column; /* Stacks the individual menu items vertically */
+        display: flex; 
+        flex-direction: column; 
         width: 100%;
-        text-align: left;
+        /* Centers the link text */
+        text-align: center; 
         margin: 10px 0;
+        /* **CRITICAL FIX**: Removes default list padding that pushes links left */
+        padding-left: 0; 
     }
     
     .nav-links li {
@@ -45,17 +49,22 @@
     .action-buttons-group {
         width: 100%;
         margin-left: 0 !important;
-        flex-direction: column; /* Stacks children vertically if more were inside */
+        flex-direction: column; 
         gap: 0;
+        /* Centers the entire action group */
+        align-items: center; 
     }
 
     /* 4. Fix the Search Bar and Search Button Alignment */
     .search-section {
-        display: flex; /* Keeps Input and Search Button side-by-side */
-        width: 100%;
+        display: flex; 
+        /* Uses 90% width for better screen margin */
+        width: 90%; 
         gap: 5px; 
-        padding: 0 10px; 
+        padding: 0; 
         box-sizing: border-box;
+        /* Centers the search input and button together */
+        justify-content: center; 
     }
 
     .search-input {
@@ -76,16 +85,17 @@
     .mx-2 { 
         display: flex; 
         justify-content: space-between; 
-        width: 100%;
+        /* Uses 90% width to match the search bar alignment */
+        width: 90%; 
         margin-top: 10px !important; 
         margin-left: 0 !important; 
         margin-right: 0 !important; 
-        padding: 0 10px; 
+        padding: 0; 
         box-sizing: border-box;
     }
     
     .login-button, .signup-button {
-        width: 48%; /* Each button takes nearly half the width */
+        width: 48%; 
         margin: 0;
     }
     
