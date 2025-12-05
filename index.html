@@ -4,11 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-    <link rel="icon" type="image/png" href="water_drop.png">
-    <link rel="icon" type="image/x-icon" href="water_drop.ico">
-=======
->>>>>>> db3612bb437d7f544a2e52b3468e27347657a515
     <title>Rain Water Harvesting</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -16,95 +11,6 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-       /* ---------------------------------------------------------------------- */
-/* 🚀 FINAL OVERHAUL (ALL SECTIONS) - USING !important FOR PRIORITY */
-/* ---------------------------------------------------------------------- */
-@media screen and (max-width: 768px) {
-    /* 1. Navbar Main Container (Guarantees Stacking and Centering) */
-    .navbar {
-        flex-direction: column !important; /* Forces vertical stack */
-        padding: 10px 0 !important;
-        align-items: center !important; /* Centers elements vertically */
-        text-align: center !important; /* Centers Logo/Text */
-        width: 100% !important;
-    }
-    
-    /* Logo Container (To ensure it takes full width and centers) */
-    .logo {
-        width: 100% !important;
-        text-align: center !important; 
-        margin-bottom: 10px !important;
-    }
-    
-    /* 2. Nav Links (Home, Review, etc.) */
-    .nav-links {
-        display: flex !important; 
-        flex-direction: column !important; 
-        width: 100% !important;
-        text-align: center !important; 
-        margin: 10px 0 !important;
-        padding-left: 0 !important; /* Removes list padding */
-    }
-    
-    .nav-links li {
-        margin: 5px 0 !important; 
-        width: 100% !important;
-    }
-    
-    /* 3. Action Group (Search + Buttons) */
-    .action-buttons-group {
-        width: 90% !important; 
-        margin: 10px auto !important; /* Centers the whole group */
-        flex-direction: column !important; 
-    }
-
-    /* Search Bar Section */
-    .search-section {
-        display: flex !important; 
-        width: 100% !important; 
-        gap: 5px !important; 
-        justify-content: center !important; 
-        margin-bottom: 10px !important;
-    }
-
-    /* Sign In/Up Buttons Container */
-    .mx-2 { 
-        display: flex !important; 
-        justify-content: space-between !important; 
-        width: 100% !important;
-        margin: 0 !important;
-    }
-    
-    .login-button, .signup-button {
-        width: 48% !important; 
-        margin: 0 !important;
-    }
-
-    /* ---------------------------------------------------------------------- */
-    /* 4. Footer Fixes */
-    /* ---------------------------------------------------------------------- */
-
-    .footer-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 20px 10px !important;
-    }
-
-    .footer-column {
-        width: 100% !important; 
-        margin-bottom: 30px !important;
-        text-align: center !important; 
-    }
-
-    .footer-column ul {
-        padding-left: 0 !important;
-        list-style-position: inside !important; 
-    }
-
-    .social-icons {
-        justify-content: center !important;
-    }
-
     /* Adjust Card Layouts and Text for Mobile Readability */
     .hero h1 {
         font-size: 2rem !important;
@@ -113,7 +19,7 @@
     .hero p {
         font-size: 1rem !important;
     }
-}
+
 /* ---------------------------------------------------------------------- */
 /* 🚀 END OF FINAL OVERHAUL */
 /* ---------------------------------------------------------------------- */
@@ -123,34 +29,6 @@
             font-family: "Poppins", system-ui, sans-serif;
         }
 
-        /* Variables and General Styling */
-        :root {
-            --bg: #e8f9f3;
-            --primary: #00897b;
-            --secondary: #00bfa5;
-            --text: #1c2b2a;
-            --muted: #5b6f6a;
-            --shadow: rgba(0, 0, 0, 0.08);
-            --white: #ffffff;
-        }
-
-        /* --- Navbar Styling --- */
-        .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background: linear-gradient(135deg, #062456, #004d40);
-            color: white;
-            padding: 15px 50px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
 
         /* Hero Section */
         .hero {
@@ -209,83 +87,6 @@
             }
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: linear-gradient(135deg, #062456, #004d40);
-            color: #fff;
-        }
-
-        .action-buttons-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-left: auto;
-        }
-
-        .search-section {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .search-input {
-            padding: 7px 10px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-            font-size: 14px;
-            height: 35px;
-            width: 130px;
-            box-sizing: border-box;
-
-        }
-
-        .search-button,
-        .login-button,
-        .signup-button {
-            padding: 8px 12px;
-            border: 1px solid #007fbf;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            background: linear-gradient(135deg, #062456, #004d40);
-            color: white;
-            font-weight: bold;
-            height: 35px;
-            box-sizing: border-box;
-            text-decoration: none;
-        }
-
-        .search-button {
-            background-color: #007fbf;
-            color: white;
-        }
-
-        .login-button,
-        .signup-button {
-            background-color: #007fbf;
-            color: white;
-            border: 1px solid #007fbf;
-        }
 
 
         /* CTA button styles */
@@ -306,24 +107,6 @@
 
 
 
-        /* Transition for smooth hover effect on all interactive buttons */
-        .search-button,
-        .login-button,
-        .signup-button,
-        .cta-button,
-        .alert-link-btn {
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Hover effect for Search, Login, and Sign Up buttons */
-        .search-button:hover,
-        .login-button:hover,
-        .signup-button:hover {
-            background: linear-gradient(135deg, #007fbf, #004d40);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border: 1px solid #007fbf;
-        }
 
         /* hover effect for the main CTA button (.cta-button) in Hero section  */
         .cta-button:hover {
@@ -632,258 +415,116 @@
         }
 
 
-        /* Footer styling RWH theme */
-        .rwh-footer {
+
+                /* Footer */
+                .rwh-footer {
             background: linear-gradient(135deg, #062456, #004d40);
             color: #f1f1f1;
-            padding-top: 50px;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            border-top: 5px solid #062456;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
-            flex-wrap: wrap;
+            padding: 50px 20px 20px;
         }
 
         .footer-col {
-            width: 30%;
-            margin: 10px 0;
+            margin-bottom: 20px;
         }
 
         .footer-col h3 {
-            color: white;
-            font-size: 1.3em;
-            margin-bottom: 25px;
             border-bottom: 2px solid #e0f7fa;
-            padding-bottom: 8px;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
 
-        .footer-col.links ul {
-            list-style: none;
+        .footer-bottom-bar {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 10px;
+            border-top: 2px solid #062456;
+        }
+
+   /* --- Navbar Styling --- */
+   .navbar-custom {
+            background: linear-gradient(135deg, #062456, #004d40);
+            padding: 10px 20px;
+        }
+
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+        }
+
+        .search-input {
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 7px 12px;
+            border-radius: 5px;
+            border: none;
+            background: #007fbf;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: #005f87;
+            transform: translateY(-2px);
+        }
+
+        body {
+            margin: 0;
             padding: 0;
         }
 
-        .footer-col.links ul li a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            padding: 5px 0;
-            transition: color 0.3s;
-        }
-
-        .footer-col.links ul li a:hover {
-            color: #004d40;
-            padding-left: 5px;
-        }
-
-        /* Social Icons Styling */
-        .social-icons a {
-            color: #f1f1f1;
-            font-size: 24px;
-            margin-right: 15px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #004d40;
-            transform: scale(1.1);
-        }
-
-
-        .contact-info {
-            margin-top: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-            color: #f1f1f1;
-        }
-
-        .contact-info p i:hover {
-            color: #004d40;
-        }
-
-
-        /* Footer Bottom Bar */
-        .footer-bottom-bar {
-            background: linear-gradient(135deg, #062456, #004d40);
-            text-align: center;
-            padding: 15px 0;
-            font-size: 0.85em;
-            color: white;
-            border-top: 2px solid #062456
-        }
-
-        .signup-button,
-        .login-button {
-            background-color: #007fbf;
-            color: white;
-            border: 1px solid #007fbf;
-
-        }
-        .suggestions-box {
-            position: absolute;
-            top: 38px;
-            left: 0;
-            background: rgb(103, 185, 185);
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            display: none;
-            z-index: 999;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .suggestions-box div {
-            padding: 8px;
-            cursor: pointer;
-        }
-
-        .suggestions-box div:hover {
-            background: #e0f2f1;
-        }
-        /* Custom Alert/Message Styling */
-.custom-alert-message {
-    background-color: #e8f9e8; /* Light green background */
-    color: #2e7d32; /* Dark green text color */
-    border: 1px solid #c8e6c9; 
-    padding: 10px 20px;
-    margin: 10px auto; 
-    width: 90%;
-    max-width: 500px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    z-index: 999;
-}
-
-.custom-alert-message .fas {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">💧 Rain Harvest</a>
-            </div>
+        <!-- ---------- NAVBAR ---------- -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="review.html"> Review </a></li>
-                <li><a href="benefits.html">Benefits</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="faq.html">Faq</a></li>
+        <a class="navbar-brand" href="index.html">💧 Rain Harvest</a>
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="fas fa-bars text-white"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="review.html">Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
             </ul>
 
-            <div class="action-buttons-group">
-                <div class="search-section">
-                    <input type="text" placeholder="Search" class="search-input">
-                    <button type="submit" class="search-button">Search</button>
-              </div>
-                </div>
-                <div id="search-suggestions"></div>
-                <div class="mx-2">
-                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
-                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div id="search-not-found-message" style="display: none;" class="custom-alert-message">
-    <i class="fas fa-exclamation-circle"></i> 
-    <span id="not-found-text"></span>
-</div>
-    <!--login Modal -->
-    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background:linear-gradient(135deg,#062456,#004d40)">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="LoginModalLabel" style="color: white;">SignIn RainHarvest</h1>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" style="color: white;">Email
-                                address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email
-                                with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1" style="color: white;">Check me
-                                out</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <form class="d-flex mb-2 mb-lg-0">
+                <input class="form-control search-input me-2" type="search" placeholder="Search">
+                <button class="search-button">Search</button>
+            </form>
 
-                </div>
+            <div class="d-flex ms-lg-3 mt-2 mt-lg-0">
+                <button class="login-button me-2" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
             </div>
+
         </div>
     </div>
+</nav>
 
-
-    <!--SignUp Modal -->
-    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background:linear-gradient(135deg,#062456,#004d40)">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="SignUpModalLabel" style="color: white;">Get An RainHarvest Account
-                    </h1>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" style="color: white;">Email
-                                address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email
-                                with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label" style="color: white;">Confirm
-                                Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1" style="color: white;">Check me
-                                out</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <section id="home" class="hero">
         <h1> <span class="water-drop">💧</span> Harvesting Rain for a Sustainable Tomorrow</h1>
         <p>🌱 Empowering homes and businesses with clean, independent water solutions. Join the movement for a greener
@@ -994,99 +635,49 @@
             </div>
         </div>
     </section>
-    <footer class="rwh-footer">
-        <div class="footer-container">
-            <div class="footer-col about">
-                <h3> 💧 RainHarvest Vision</h3>
-                <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
-                </p>
-                <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
-            </div>
+    
+    <!-- ---------- FOOTER ---------- -->
+<footer class="rwh-footer">
+    <div class="row">
 
-            <div class="footer-col links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="review.html"><i class="fas fa-star"></i> Review </a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col social">
-                <h3>Connect with Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i
-                            class="fab fa-youtube"></i></a>
-                </div>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
-                    <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
-                </div>
-            </div>
+        <div class="col-lg-4 col-md-6 footer-col">
+            <h3>💧 RainHarvest Vision</h3>
+            <p>Rainwater harvesting is a sustainable method of collecting rainwater for later use.</p>
+            <p>Reduce water scarcity and promote environmental balance.</p>
         </div>
 
-        <div class="footer-bottom-bar">
-            &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+        <div class="col-lg-4 col-md-6 footer-col">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled">
+                <li><a href="about.html" class="text-white">About Us</a></li>
+                <li><a href="faq.html" class="text-white">FAQ</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+                <li><a href="review.html" class="text-white">Review</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="col-lg-4 col-md-12 footer-col">
+            <h3>Connect with Us</h3>
+
+            <div class="d-flex gap-3 fs-3">
+                <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <p class="mt-3"><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+            <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+        &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+    </div>
+</footer>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.querySelector('.search-input');
-        const searchButton = document.querySelector('.search-button');
-        const suggestionsBox = document.getElementById('search-suggestions');
     
-        const pages = [
-            { name: 'Home', url: 'index.html' },
-            { name: 'Review', url: 'review.html' },
-            { name: 'Benefits', url: 'benefits.html' },
-            { name: 'Gallery', url: 'gallery.html' },
-            { name: 'About Us', url: 'about.html' },
-            { name: 'Faq', url: 'faq.html' }
-        ];
-    
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase().trim();
-            suggestionsBox.innerHTML = "";
-    
-            if (query === "") {
-                suggestionsBox.style.display = "none";
-                return;
-            }
-    
-            const matched = pages.filter(p => p.name.toLowerCase().includes(query));
-    
-            if (matched.length === 0) {
-                suggestionsBox.style.display = "none";
-                return;
-            }
-    
-            matched.forEach(page => {
-                const item = document.createElement('div');
-                item.textContent = page.name;
-    
-                item.addEventListener('click', () => {
-                    window.location.href = page.url;
-                });
-    
-                suggestionsBox.appendChild(item);
-            });
-    
-            suggestionsBox.style.display = "block";
-        });
-        
-    
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target)) {
-                suggestionsBox.style.display = "none";
-            }
-        });
-    });
        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
