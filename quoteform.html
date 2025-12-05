@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>RainHarvest Quote Form Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* --- Navbar Styling --- */
+        .navbar-custom {
+            background: linear-gradient(135deg, #062456, #004d40);
+            padding: 10px 20px;
+        }
+
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+        }
+
+        .search-input {
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        .search-button,
+        .login-button,
+        .signup-button {
+            padding: 7px 12px;
+            border-radius: 5px;
+            border: none;
+            background: #007fbf;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .search-button:hover,
+        .login-button:hover,
+        .signup-button:hover {
+            background: #005f87;
+            transform: translateY(-2px);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
         /* BASE STYLES for font */
         body {
             font-family: "Poppins", system-ui, sans-serif;
@@ -305,35 +354,121 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #007fbf;
         }
+        /* ---------------- Footer ---------------- */
+    .rwh-footer {
+      background: linear-gradient(135deg, #062456, #004d40);
+      color: #f1f1f1;
+      padding-top: 50px;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    .footer-col {
+      width: 100%;
+      max-width: 350px;
+      margin: 10px 0;
+    }
+
+    .footer-col h3 {
+      color: white;
+      font-size: 1.3em;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #e0f7fa;
+      padding-bottom: 8px;
+    }
+
+    .footer-col.links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col.links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+
+    .footer-col.links ul li a:hover {
+      color: #004d40;
+      padding-left: 5px;
+    }
+
+    .social-icons a {
+      color: #f1f1f1;
+      font-size: 24px;
+      margin-right: 15px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #004d40;
+      transform: scale(1.1);
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    .footer-bottom-bar {
+      background: linear-gradient(135deg, #062456, #004d40);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.85em;
+      color: white;
+      border-top: 2px solid #062456;
+    }
     </style>
 </head>
 <body>
  <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">💧 Rain Harvest</a>
-            </div>
+    <!-- Navbar -->
+   
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="review.html"> Review </a></li>
-                <li><a href="benefits.html">Benefits</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="faq.html">Faq</a></li>
+        <a class="navbar-brand" href="index.html">💧 Rain Harvest</a>
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="fas fa-bars text-white"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="review.html">Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
             </ul>
 
-            <div class="action-buttons-group">
-                <div class="search-section">
-                    <input type="text" placeholder="Search" class="search-input">
-                    <button type="submit" class="search-button">Search</button>
-                </div>
-                <div class="mx-2">
-                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
-                    <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
-                </div>
+            <form class="d-flex mb-2 mb-lg-0">
+                <input class="form-control search-input me-2" type="search" placeholder="Search">
+                <button class="search-button">Search</button>
+            </form>
+
+            <div class="d-flex ms-lg-3 mt-2 mt-lg-0">
+                <button class="login-button me-2" data-bs-toggle="modal" data-bs-target="#LoginModal">SignIn</button>
+                <button class="signup-button" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
             </div>
-        </nav>
+
+        </div>
+    </div>
+</nav>
+       
     </header>
     <section id="quote-form" class="quote-form-section">
         <div class="form-container">
@@ -383,45 +518,42 @@
             </form>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="rwh-footer">
-        <div class="footer-container">
-            <div class="footer-col about">
-                <h3> 💧 RainHarvest Vision</h3>
-                <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.
-                </p>
-                <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
-            </div>
-
-            <div class="footer-col links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="review.html"><i class="fas fa-star"></i> Review </a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col social">
-                <h3>Connect with Us</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/RAINHARVESTofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/RainHarvest_RWH" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/rainharvest-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.youtube.com/channel/RainHarvestingRWH" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
-                    <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
-                </div>
-            </div>
+    
+      <!-- Footer -->
+  <footer class="rwh-footer">
+    <div class="footer-container">
+      <div class="footer-col about">
+        <h3>💧 RainHarvest Vision</h3>
+        <p>Rainwater harvesting is a sustainable method of collecting and storing rainwater for later use.</p>
+        <p>Reduce water scarcity, promote groundwater recharge, and ensure environmental balance.</p>
+      </div>
+      <div class="footer-col links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li><a href="review.html"><i class="fas fa-star"></i> Reviews </a></li>
+        </ul>
+      </div>
+      <div class="footer-col social">
+        <h3>Connect with Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-
-        <div class="footer-bottom-bar">
-            &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> City/Area, Pakistan</p>
+          <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      &copy; 2025 Rainwater Harvesting Project. All Rights Reserved.
+    </div>
+  </footer>
 
     <script>
         // NEW: Quote Form Submission Logic
