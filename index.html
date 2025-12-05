@@ -11,37 +11,74 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* ------------------------------------------------ */
-/* START OF MOBILE RESPONSIVE FIXES        */
-/* ------------------------------------------------ */
+        @media screen and (max-width: 600px) {
+    /* ------------------------------------------- */
+    /* 1. Base Fixes */
+    /* ------------------------------------------- */
 
-@media screen and (max-width: 600px) {
-
-    /* This rule makes sure all images and videos fit inside the screen */
     img, video {
-        max-width: 100%;
-        height: auto;
+        max-width: 100%; /* Prevents images from exceeding container width */
+        height: auto;    /* Maintains the image aspect ratio */
     }
-
-    /* This rule fixes the layout of your columns (if you have them) */
-    .main-content, .sidebar, .column {
-        width: 100%;       /* Force them to take up the full screen width */
-        float: none;       /* Remove floating effects */
-        padding: 10px;
-    }
-
-    /* This rule fixes your header/navigation (e.g., stacking menu items) */
-    .header, .nav-container {
-        flex-direction: column; /* Stacks items top-to-bottom */
-        align-items: center;    /* Centers them horizontally */
-    }
-
-    /* Add any other specific fixes here */
+    
+    /* ... rest of the code below ... */
 }
+@media screen and (max-width: 600px) {
+    /* ... previous code ... */
 
-/* ------------------------------------------------ */
-/* END OF MOBILE RESPONSIVE FIXES          */
-/* ------------------------------------------------ */
+    /* ------------------------------------------- */
+    /* 2. Navigation Links Fix */
+    /* ------------------------------------------- */
+    .nav-links ul { /* Use the class name of your <ul> element */
+        display: flex;
+        flex-direction: column; /* Stacks the menu items vertically */
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-top: 10px;
+    }
+    
+    .nav-links li { /* Use the class name of your <li> element */
+        margin: 5px 0;
+    }
+    
+    /* ... rest of the code below ... */
+}
+@media screen and (max-width: 600px) {
+    /* ... previous code ... */
+
+    /* ------------------------------------------- */
+    /* 3. Search and Buttons Fix (CRITICAL) */
+    /* ------------------------------------------- */
+    
+    /* Search Bar and Search Button Container */
+    .search-area { /* REPLACE with the actual container class for Search/Buttons */
+        display: flex;
+        flex-direction: column; /* Stacks the search box AND the search button */
+        width: 90%;             /* Give it a good mobile width */
+        margin: 10px auto;      /* Center the container */
+    }
+
+    /* Make both the input field and search button full width */
+    .search-area input[type="text"], 
+    .search-area button[type="submit"] {
+        width: 100%;             
+        margin-bottom: 5px;      /* Add spacing between stacked items */
+    }
+
+    /* SignIn/SignUp Buttons Container */
+    .auth-buttons { /* REPLACE with the actual container class for SignIn/SignUp */
+        display: flex;
+        flex-direction: column; /* Stacks the sign-in/sign-up buttons */
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
         /* BASE STYLES */
         body {
             scroll-behavior: smooth;
