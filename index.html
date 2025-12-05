@@ -28,7 +28,7 @@
     .nav-links {
         display: flex; 
         flex-direction: column; 
-        width: 100%;
+        text-align: center;
         /* Centers the link text */
         text-align: center; 
         margin: 10px 0;
@@ -111,6 +111,34 @@
 /* ---------------------------------------------------------------------- */
 /* 🚀 END OF MOBILE RESPONSIVE FIXES */
 /* ---------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+/* 7. Footer Fixes for Mobile */
+/* ---------------------------------------------------------------------- */
+
+/* Footer ke teen columns ko stack up karein */
+.footer-content {
+    flex-direction: column;
+    align-items: center; /* Center the overall footer columns */
+    padding: 20px 10px;
+}
+
+/* Har column ki width badhayein taake woh full screen le */
+.footer-column {
+    width: 100%; 
+    margin-bottom: 30px; /* Space between stacked columns */
+    text-align: center; /* Center all text inside the columns */
+}
+
+/* Quick Links list ko center karein */
+.footer-column ul {
+    padding-left: 0;
+    list-style-position: inside; /* Bullets should be visible */
+}
+
+/* Connect with Us icons ko center karein */
+.social-icons {
+    justify-content: center;
+}
         /* BASE STYLES */
         body {
             scroll-behavior: smooth;
